@@ -2,6 +2,14 @@ package complexity.eafit;
 
 import java.util.*;
 
+
+/**
+ * Main program
+ * 
+ * @author Camilo Vieira
+ * @author Juan Diego Restrepo
+ *
+ */
 public class MainTest {
 	/*
 	 * Generates the list of Elements with random coords and incremental id.
@@ -36,19 +44,31 @@ public class MainTest {
 
 		
 		long b = System.nanoTime();
-		List<Integer> resultList=objElementFinder.search(objElement, 50);
+		List<Integer> resultList=objElementFinder.search(objElement, 120);
 		System.out.println("Tiempo: "+ (System.nanoTime()-b));
 		
 		for (Integer integer : resultList) {
 			System.out.print(integer+", ");
 		}
+		
 		System.out.println("****");
 		b = System.nanoTime();
-		List<Integer> resultList2=objRTreeFinder.search(objElement,50);
+		List<Integer> resultList2=objRTreeFinder.search(objElement,120);
 		System.out.println("TiempoRtree: "+ (System.nanoTime()-b));
 
 		for (Integer integer : resultList2) {
 			System.out.print(integer+", ");
 		}
+
+		
+		System.out.println("**** Comparing distance calculator methods ****");
+		b = System.nanoTime();
+		objElementFinder.getMostDistantSlow(list);
+		System.out.println("Tiempo metodo de distancia O(n^2): "+ (System.nanoTime()-b));
+		
+		b = System.nanoTime();
+		objElementFinder.getMostDistantElements(list);
+		System.out.println("Tiempo metodo de distancia optimo: "+ (System.nanoTime()-b));
+
 	}
 }

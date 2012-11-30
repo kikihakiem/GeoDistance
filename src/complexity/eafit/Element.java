@@ -1,5 +1,16 @@
 package complexity.eafit;
 
+/**
+ * Represents a point in a n-dimensional space.
+ * 
+ * @author Camilo Vieira
+ * @author Juan Diego Restrepo
+ *
+ */
+/**
+ * @author Juan
+ *
+ */
 public class Element {
 	private int id;
 	private float[] coords;
@@ -25,6 +36,9 @@ public class Element {
 		}
 	}
 
+	/**
+	 * @return Number given to the point for ease of identification  
+	 */
 	public int getId() {
 		return id;
 	}
@@ -33,6 +47,9 @@ public class Element {
 		this.id = id;
 	}
 
+	/**
+	 * @return Coordinates of the point in an n-dimensional space
+	 */
 	public float[] getCoords() {
 		return coords;
 	}
@@ -40,6 +57,12 @@ public class Element {
 	public void setCoords(float[] coords) {
 		this.coords = coords;
 	}
+	
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
 	public String toString(){
 		String msg="id: "+this.id+"\n";
 		for (int i = 0; i < this.coords.length; i++) {
