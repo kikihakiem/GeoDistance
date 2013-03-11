@@ -2,7 +2,7 @@ GeoDistance
 ===========
 
 
-Implements the custom designed search algorithm proposed by <strong>Dr. Juan
+Implements a custom designed search algorithm proposed by <strong>Dr. Juan
 Guillermo Lalinde</strong>. The purpose of this algorithm is to search close
 points in a n-dimensional space. This algorithm was inspired on Floyd's
 algorithm and was given the name Spatial Binary Search (SBS).
@@ -18,10 +18,13 @@ B. And the process goes on.
 Besides implementing SBS we also perform a comparison with a search algorithm 
 on an RTree.
 
-Adittional to this we also developed a slow version of a farthest point finder algorithm.
+Additional to this we also developed a slow version of a farthest point finder algorithm.
 The not so fancy method “getMostDistantSlow” performs an all-to-all search O(n2). 
-The “getMostDistantElements” implements SBS.
 
 Authors:
-Camilo Vieira
+
+Camilo Vieira                                                                                                             
 Juan Diego Restrepo
+
+Additional Credits:
+RTree source code from open project: http://newbrightidea.com/2011/01/24/rtree-implementation-in-java/
